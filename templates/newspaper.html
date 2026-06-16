@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="newspaper.css">
+</head>
+<body>
+
+    {% if cover_image_path %}
+    <div class="cover-page">
+        <img src="{{ cover_image_path }}" alt="{{ title }}" class="cover-image">
+    </div>
+    {% endif %}
+
+    {% if editors_note %}
+    <!-- Editor's Perspective Page -->
+    <div class="editors-page">
+        <div class="editors-content-box">
+            <div class="editors-title">وجهة نظر المحرر</div>
+            <div class="editors-text">
+                {{ editors_note | safe }}
+            </div>
+            <div class="editors-signature">— بوت الجودة والتميز الذكي</div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% for page_data in pages %}
+    <!-- Newspaper Page -->
+    <div class="newspaper-page">
+        
+        <!-- Header -->
+        <div class="newspaper-header">
+            <div class="header-center">
+                <div class="publication-name">{{ publication_name }}</div>
+                <div class="publication-tagline">{{ tagline }}</div>
+            </div>
+            <div class="header-top-right">
+                {{ page_data.page_num }}
+            </div>
+        </div>
+
+        <!-- Articles Container -->
+        <div class="articles-container">
+            {% for article in page_data.articles %}
+            <div class="article-section {% if loop.index == 1 %}article-top{% else %}article-bottom{% endif %}">
+                
+                <!-- Article Header (Title and Location) -->
+                <div class="article-header-section">
+                    <h1 class="article-headline">{{ article.title }}</h1>
+                    <div class="article-location">{{ article.location }}</div>
+                </div>
+                
+                <!-- Article Image -->
+                {% if article.local_image_path %}
+                <div class="article-image {% if loop.index == 1 %}image-horizontal{% else %}image-vertical{% endif %}">
+                    <img src="{{ article.local_image_path }}" alt="{{ article.title }}">
+                </div>
+                {% elif article.image_url %}
+                <div class="article-image {% if loop.index == 1 %}image-horizontal{% else %}image-vertical{% endif %}">
+                    <img src="{{ article.image_url }}" alt="{{ article.title }}">
+                </div>
+                {% endif %}
+                
+                <!-- Article Content -->
+                <div class="article-body">
+                    {% if article.lead %}
+                    <div class="article-lead">{{ article.lead }}</div>
+                    {% endif %}
+                    <div class="article-text">{{ article.content | safe }}</div>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Footer -->
+        <div class="newspaper-footer">
+            <div class="footer-left">{{ footer_text or "alrehlanews" }}</div>
+            <div class="footer-center">
+                <div class="social-icons">
+                    <span class="social-icon">📷</span>
+                    <span class="social-icon">🐦</span>
+                    <span class="social-icon">🎵</span>
+                    <span class="social-icon">✈️</span>
+                    <span class="social-icon">👻</span>
+                    <span class="social-icon">💬</span>
+                    <span class="social-icon">👥</span>
+                    <span class="social-icon">▶️</span>
+                    <span class="social-icon">📊</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                {% set phone = contact_phone or "00973 3701 4477" %}
+                {% set phone_parts = phone.split() %}
+                {{ phone_parts[2] }} {{ phone_parts[1] }} {{ phone_parts[0] }}
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+
+    {% if back_cover_image_path %}
+    <!-- Back Cover Page -->
+    <div class="back-cover-page">
+        <img src="{{ back_cover_image_path }}" alt="Back Cover" class="back-cover-image">
+    </div>
+    {% endif %}
+
+</body>
+</html>
+

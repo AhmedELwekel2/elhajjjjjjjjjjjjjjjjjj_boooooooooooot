@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap');
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+body {
+    font-family: 'Amiri', 'Cairo', serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #000;
+    direction: rtl;
+    text-align: right;
+}
+
+.cover-page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Back Cover Page */
+.back-cover-page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.back-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Editor's Page */
+.editors-page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.editors-content-box {
+    width: 160mm;
+    min-height: 180mm;
+    max-height: 240mm;
+    background-color: #f5f5f5;
+    padding: 20mm 25mm;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.editors-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12mm;
+    margin-top: 0;
+    text-align: right;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4mm;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.editors-text {
+    font-family: 'Amiri', serif;
+    font-size: 11pt;
+    line-height: 1.85;
+    color: #000;
+    text-align: justify;
+    flex: 1 1 auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    max-height: 140mm;
+}
+
+.editors-text p {
+    margin: 0 0 5mm 0;
+    text-align: justify;
+    page-break-inside: avoid;
+}
+
+.editors-text p:last-of-type {
+    margin-bottom: 8mm;
+    padding-bottom: 0;
+}
+
+.editors-signature {
+    font-family: 'Cairo', sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #000;
+    margin-top: 8mm;
+    margin-bottom: 0;
+    text-align: right;
+    padding-top: 6mm;
+    padding-bottom: 0;
+    flex-shrink: 0;
+    border-top: 1px solid transparent;
+    min-height: 8mm;
+}
+
+.newspaper-page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    padding: 9mm 15mm 6mm 15mm;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    position: relative;
+}
+
+/* Header Styles */
+.newspaper-header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+}
+
+.header-top-left {
+    font-family: 'Cairo', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    line-height: 1.4;
+}
+
+.header-center {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.publication-name {
+    font-family: 'Cairo', sans-serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3;
+    display: block;
+}
+
+.publication-tagline {
+    font-family: 'Cairo', sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.5;
+    white-space: normal;
+    max-width: 100%;
+    display: block;
+}
+
+.header-top-right {
+    font-family: 'Cairo', sans-serif;
+    font-size: 24pt;
+    font-weight: 700;
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+    line-height: 1;
+}
+
+/* Articles Container */
+.articles-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14mm;
+    margin-bottom: 0;
+    min-height: 0;
+    overflow: visible;
+    page-break-inside: auto;
+}
+
+/* Article Section */
+.article-section {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    flex-shrink: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: auto;
+}
+
+.article-top {
+    flex-shrink: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.article-bottom {
+    flex-shrink: 0;
+    clear: both;
+    margin-top: 8mm;
+    padding-top: 4mm;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Article Header Section - groups headline and location */
+.article-header-section {
+    clear: both;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.article-bottom .article-header-section {
+    margin-top: 8mm;
+    margin-bottom: 8px;
+}
+
+/* Article Headline */
+.article-headline {
+    font-family: 'Cairo', sans-serif;
+    font-size: 24pt;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 5px 0;
+    color: #000;
+    text-align: right;
+    letter-spacing: -0.3px;
+    clear: both;
+    width: 100%;
+}
+
+.article-bottom .article-headline {
+    font-size: 20pt;
+    margin-bottom: 4px;
+}
+
+/* Article Location */
+.article-location {
+    font-family: 'Cairo', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 8px;
+    text-align: right;
+    line-height: 1.4;
+    clear: both;
+    width: 100%;
+}
+
+/* Article Images */
+.article-image {
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.image-horizontal {
+    width: 100%;
+    height: 85mm;
+    margin-bottom: 10px;
+}
+
+.image-vertical {
+    width: 65mm;
+    height: 100mm;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    clear: none;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Article Body */
+.article-body {
+    font-family: 'Amiri', serif;
+    font-size: 10.5pt;
+    line-height: 1.7;
+    text-align: justify;
+    color: #000;
+    margin: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.article-lead {
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-size: 11pt;
+    line-height: 1.9;
+    column-span: all;
+}
+
+.article-text {
+    column-count: 2;
+    column-gap: 6mm;
+    column-fill: balance;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+.article-text p {
+    margin: 0 0 5px 0;
+    text-align: justify;
+    text-indent: 0;
+    orphans: 2;
+    widows: 2;
+    page-break-inside: avoid;
+}
+
+.article-text p:last-child {
+    margin-bottom: 0;
+}
+
+.article-text h3 {
+    font-family: 'Cairo', sans-serif;
+    font-size: 11.5pt;
+    font-weight: 600;
+    margin: 8px 0 4px 0;
+    color: #000;
+    column-span: all;
+}
+
+/* Adjust text columns for articles with vertical images */
+.article-bottom .article-body {
+    display: block;
+    overflow: visible;
+    clear: both;
+    margin-top: 8px;
+}
+
+.article-bottom .article-text {
+    column-count: 2;
+    column-gap: 7mm;
+    margin-top: 0;
+    text-align: justify;
+    clear: none;
+}
+
+/* Ensure text flows around vertical image */
+.article-bottom .article-image {
+    clear: none;
+}
+
+/* Make sure headline and location are not affected by image float */
+.article-bottom .article-header-section {
+    clear: both;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.article-bottom .article-headline,
+.article-bottom .article-location {
+    clear: both;
+    float: none;
+    width: 100%;
+}
+
+/* Footer */
+.newspaper-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    margin-top: 3mm;
+    font-family: 'Cairo', sans-serif;
+    font-size: 8pt;
+    color: #000;
+    min-height: 7mm;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.footer-left {
+    flex: 1;
+    text-align: right;
+    font-size: 8pt;
+}
+
+.footer-center {
+    flex: 2;
+    text-align: center;
+}
+
+.social-icons {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-icon {
+    font-size: 10pt;
+    display: inline-block;
+    line-height: 1;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: left;
+    font-size: 8pt;
+    direction: ltr;
+}
+
+/* Page break handling */
+.newspaper-page:last-child {
+    page-break-after: auto;
+}

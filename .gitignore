@@ -1,0 +1,109 @@
+# ============================
+# Environment / Sensitive Files
+# ============================
+.env
+.env.*
+!.env.example
+!.env.example.*
+!.gitignore
+
+# ============================
+# Python
+# ============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.venv/
+
+# ============================
+# Node.js
+# ============================
+node_modules/
+.next/
+out/
+
+# ============================
+# IDE / Editor
+# ============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================
+# Logs
+# ============================
+*.log
+logs/
+
+# ============================
+# OS Generated Files
+# ============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ============================
+# Temporary Files
+# ============================
+*.tmp
+temp/
+tmp/
+
+# ============================
+# Secrets / Certificates / Keys
+# ============================
+*.pem
+*.key
+*.p12
+*.jks
+*.secret
+credentials.json
+service-account*.json
+.docker/config.json
+
+# ============================
+# User Data & Test Output
+# ============================
+user_usage.json
+quality_bot/user_usage.json
+quality_bot/test_news_results.json
+quality_bot/test_rss_articles_*.json
+quality_bot/enhanced_articles_*.json
+quality_bot/all_enhanced_quality_articles.txt
+quality_bot/all_enhanced_tourism_articles.txt
+all_enhanced_quality_articles.txt
+
+# ============================
+# Archives & Binary
+# ============================
+*.zip
+*.pdf
+*.ipynb
+
+# ============================
+# Database
+# ============================
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================
+# Hajj bot runtime artifacts
+# ============================
+quality_bot/generated/
+quality_bot/news.json
+quality_bot/daily_test.json
+quality_bot/user_usage.json
+quality_bot/all_enhanced_hajj_articles.txt
+user_usage.json
